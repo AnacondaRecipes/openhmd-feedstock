@@ -7,14 +7,16 @@ source:
   patches:
     - 0001-BUILD_BOTH_STATIC_SHARED_LIBS-BUILD_BOTH_STATIC_SHAR.patch
 
+build:
+  number: 1
+
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - cmake
     - ninja
     - git
-    - m2-patch  # [win]
-    - patch     # [not win]
   host:
     - hidapi
 
